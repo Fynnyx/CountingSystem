@@ -13,9 +13,11 @@ const commands = [
         .addStringOption(option => 
             option.setName("number")
             .setDescription("Set the specific number")
-            .setType("INTEGER")
-            .setRequired(true)   
-        )
+            .setRequired(true)
+        ),
+    new SlashCommandBuilder()
+            .setName('setchannel')
+            .setDescription('Set the counting channel')
     ]
     .map(command => command.toJSON());
 
