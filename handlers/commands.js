@@ -25,7 +25,6 @@ module.exports = async (client) => {
     });
     client.on("ready", async () => {
         // Register for a single guild
-        console.log(arrayOfSlashCommands);
         await client.guilds.cache
             .get("685559538077925400")
             .commands.set(arrayOfSlashCommands);
