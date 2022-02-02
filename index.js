@@ -1,4 +1,4 @@
-const { Client, Intents } = require("discord.js")
+const { Client, Intents, Collection } = require("discord.js")
 const dotenv = require("dotenv")
 
 dotenv.config()
@@ -12,10 +12,10 @@ const client = new Client({
 });
 module.exports = client;
 
-// client.commands = new Collection();
+client.slashCommands = new Collection();
 // client.aliases = new Collection();
 // client.categories = readdirSync("./commands/");
-["events"].forEach(handler => {
+["events", "commands"].forEach(handler => {
 	require(`./handlers/${handler}`)(client);
 });
 
